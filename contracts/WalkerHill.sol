@@ -22,6 +22,10 @@ contract WalkerHill is ERC20, ERC20Burnable, ERC20Snapshot, Ownable {
         _mint(to, amount);
     }
 
+    function burn(address to, uint256 amount) public onlyOwner {
+        _burn(to, amount);
+    }
+
     function _beforeTokenTransfer(address from, address to, uint256 amount)
         internal
         override(ERC20, ERC20Snapshot)
